@@ -19,8 +19,9 @@
         <ul class="nav-links">
           <i class="uil uil-times navCloseBtn"></i>
           <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
           <li><a href="{{url_for('contact')}}">Contact Us</a></li>
-          <li><a href="#">About us</a></li>
+          
         </ul>
         <i class="uil uil-search search-icon" id="searchIcon"></i>
         <div class="search-box">
@@ -32,6 +33,7 @@
         </div>
       </nav>
     
+
     <div class="Login-box">
 		<h2>Login</h2>
         <p style="text-align:center;color:white">{{ msg }}</p>
@@ -44,17 +46,16 @@
 				<input type="password" name="password" id="" required="">
 				<label for="">Password</label>
 			</div>
-			<button ><div class="box"><input type="submit" class="btn" value="SIGN IN"></div>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+			<button type="submit"  class="btn" value="SIGN IN">
+        sign in
 			</button>
 		</form>
 		
+    
 		<div class="login_signup">Don't have an account? <a href="{{ url_for('reg') }}" id="signup">Signup</a></div>
       </div>
-
+    
+     
       
     </body>
     <script src="/static/js/nav.js"></script>

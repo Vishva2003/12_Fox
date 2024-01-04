@@ -558,6 +558,7 @@ body .container .card {
   padding: 12px 36px;
   font-weight: 400;
   border-radius: 6px;
+  width: 180px;
   border: 1px solid #ffffff80;
   transition: all 0.3s ease;
 }

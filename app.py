@@ -8,10 +8,10 @@ app = Flask(__name__)
 
 app.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
-    host='localhost',
-    user='root',
+    host='project-12fox.criqc0wmc4yw.us-east-1.rds.amazonaws.com',
+    user='vishva',
     password='Vishva2003',
-    database='12fox'
+    database='12Fox'
 )
 cursor = conn.cursor()
 

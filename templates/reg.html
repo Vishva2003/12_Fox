@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="/static/css/loginreg.css">
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/loginreg.css')}}" media="all">
-    </head>
+        <link rel="icon" href="assets\favicon.ico">
+      </head>
     <body>
 
       <nav class="nav">
@@ -19,8 +20,9 @@
         <ul class="nav-links">
           <i class="uil uil-times navCloseBtn"></i>
           <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
           <li><a href="{{url_for('contact')}}">Contact Us</a></li>
-          <li><a href="#contact">About Us</a></li>
+          
         </ul>
         <i class="uil uil-search search-icon" id="searchIcon"></i>
         <div class="search-box">
@@ -52,11 +54,8 @@
 				<input type="password" name="confirm" id="" required="">
 				<label for="">Confirm Password</label>
 			</div>
-			<button ><div class="box"><input type="submit" class="btn" value="SIGN UP"></div>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+      <button type="submit"  class="btn" value="SIGN IN">
+        Sign Up
 			</button>
 		</form>
 		
