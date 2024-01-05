@@ -12,6 +12,38 @@ body {
   background: #000
   
 }
+
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: #000000;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 99;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 80%;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+  filter: brightness(90%);
+}
+
+
 .nav {
   position: fixed;
   top: 0;
@@ -331,8 +363,6 @@ p {
 
 /* product */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-
 .Product{
   position: relative;
   overflow: hidden;
@@ -351,7 +381,7 @@ p {
 .product span {
   font-size: 14px;
   color: #ffffffb9;
-  padding-left: 15px;
+
   font-weight: 400;
 }
 
@@ -374,12 +404,6 @@ body .container .card {
   transition: 0.5s;
 }
 
-/*
- * Preparing stage
-*/
-/*
- /* Font */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 /* Design */
 .Products,
@@ -476,7 +500,7 @@ body .container .card {
 
 .glassBox {
   width: 100%;
-  height: 400px;
+  height: 500px;
   max-width: 300px;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.02);
@@ -503,10 +527,17 @@ body .container .card {
   box-sizing: border-box;
   transition: 400ms;
 }
+.glassBox__imgBox {
+  display: flex;
+  justify-content: center;
+}
+
 .glassBox__imgBox img {
   display: block;
-  width: 100%;
-  height: auto;
+  display: block;
+  width: 234px;
+  height: 251px;
+  
 }
 .glassBox__title {
   text-align: center;
@@ -538,18 +569,13 @@ body .container .card {
 .glassBox__price .product-price {
   font-weight: 800;
   font-size: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #ffffff;
   width: 60px;
   display: flex;
   justify-content: center;
 }
-.glassBox__price .actual-price {
-  opacity: 0.5;
-  text-decoration: line-through;
-  justify-content: center;
-  display: flex;
-  color: red;
-}
+
 .glassBox__Button {
   transition: transform 0.3s ease-in-out;
 }
@@ -584,13 +610,9 @@ body .container .card {
 }
 
 .glassBox:hover .glassBox__price .product-price {
-  color: #6c9e20;
+  color: #D4AF37;
   font-weight: 800;
   font-size: x-large;
-}
-.glassBox:hover .glassBox__price .actual-price {
-  font-weight: 300;
-  font-size: medium;
 }
 
 .glassBox:hover .glassBox__Button a {
@@ -690,37 +712,7 @@ transition:  all 300ms ease-in-out;
   color :linear-gradient(135deg, #2b77fa, #fff, rgb(132, 60, 232));
 }
 
-.scroll-up-btn {
-  position: fixed;
-  height: 45px;
-  width: 42px;
-  background: #1e3551;
-  right: 30px;
-  bottom: 10px;
-  text-align: center;
-  line-height: 45px;
-  color: #fff;
-  z-index: 9999;
-  font-size: 30px;
-  border-radius: 6px;
-  border-bottom-width: 2px;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
 
-.scroll-up-btn.show {
-  bottom: 30px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.scroll-up-btn:hover {
-  filter: brightness(90%);
-}
-
-/*  Home  */
 
 /*  Contact  */
 section .title {
