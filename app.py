@@ -4,8 +4,6 @@ import re
 import os 
 
 app = Flask(__name__)
-
-
 app.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
     host='project-12fox.criqc0wmc4yw.us-east-1.rds.amazonaws.com',

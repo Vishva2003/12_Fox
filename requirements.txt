@@ -2,3 +2,7 @@ Flask==2.0.1
 mysql-connector-python==8.0.28
 flask-mysql
 mysql-connector
+werkzeug
+mysql
+jinja2
+gunicorn
