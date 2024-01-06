@@ -94,6 +94,21 @@ def base():
 def contact():
    return render_template("contact.html")
 
+@app.route('/contact1', methods=['GET', 'POST'])
+def contact1():
+    msg=""
+    if request.method == 'POST':
+        USERNAME = request.form['username']
+        EMAIL = request.form['email']
+        SUBJECT = request.form['subject']
+        MESSAGE = request.form['message']
+
+        
+        query =("INSERT INTO contact (USERNAME ,EMAIL ,SUBJECT ,MESSAGE) VALUES (%s, %s, %s, %s)")  
+        cursor.execute(query, (USERNAME,EMAIL,SUBJECT,MESSAGE))
+        contact =conn.commit()
+    
+        return render_template('contact.html', msg="Thanks for filling in 12Fox!!")
 
 
 
