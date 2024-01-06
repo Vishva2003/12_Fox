@@ -3,8 +3,8 @@ import mysql.connector
 import re
 import os 
 
-app = Flask(__name__)
-app.secret_key=os.urandom(24)
+application = Flask(__name__)
+application.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
     host='project-12fox.criqc0wmc4yw.us-east-1.rds.amazonaws.com',
     user='vishva',
@@ -15,13 +15,13 @@ cursor = conn.cursor()
 
 #Routing to the user Login page
 
-@app.route('/')
+@application.route('/')
 def login():
    return render_template("login.html")
 
 
 
-@app.route("/login1", methods=['GET', 'POST'])
+@application.route("/login1", methods=['GET', 'POST'])
 def login1():
     msg =""
     if request.method == 'POST':
@@ -43,11 +43,11 @@ def login1():
 
 #Routing to the user registration page
 
-@app.route("/reg")
+@application.route("/reg")
 def reg():
     return render_template("reg.html")
 
-@app.route("/reg1", methods=['GET', 'POST'])
+@application.route("/reg1", methods=['GET', 'POST'])
 def reg1():
     msg=""
     if request.method == 'POST':
@@ -83,18 +83,18 @@ def reg1():
 
 #Routing to the user dashboard
 
-@app.route('/12fox')
+@application.route('/12fox')
 def base():
    return render_template("index.html")
 
 
 #Routing to the contact us
 
-@app.route('/contact')
+@application.route('/contact')
 def contact():
    return render_template("contact.html")
 
-@app.route('/contact1', methods=['GET', 'POST'])
+@application.route('/contact1', methods=['GET', 'POST'])
 def contact1():
     msg=""
     if request.method == 'POST':
@@ -113,4 +113,4 @@ def contact1():
 
 
 if __name__ == "__main__":
-   app.run(host='0.0.0.0',debug=True)
+   application.run(host='0.0.0.0',debug=True)
