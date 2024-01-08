@@ -3,8 +3,8 @@ import mysql.connector
 import re
 import os 
 
-application = Flask(__name__)
-application.secret_key=os.urandom(24)
+app = Flask(__name__)
+app.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
     host='project-12fox.criqc0wmc4yw.us-east-1.rds.amazonaws.com',
     user='vishva',
@@ -15,13 +15,13 @@ cursor = conn.cursor()
 
 #Routing to the user Login page
 
-@application.route('/')
+@app.route('/login')
 def login():
    return render_template("login.html")
 
 
 
-@application.route("/login1", methods=['GET', 'POST'])
+@app.route("/login1", methods=['GET', 'POST'])
 def login1():
     msg =""
     if request.method == 'POST':
@@ -34,7 +34,7 @@ def login1():
         
         if len(user)>0:
             session["USER_ID"]=user[0][0]
-            return redirect("/12fox")
+            return redirect("/home")
         else:
             error="Invalid username or password"
             return render_template("login.html", msg=error)
@@ -43,11 +43,11 @@ def login1():
 
 #Routing to the user registration page
 
-@application.route("/reg")
+@app.route("/reg")
 def reg():
     return render_template("reg.html")
 
-@application.route("/reg1", methods=['GET', 'POST'])
+@app.route("/reg1", methods=['GET', 'POST'])
 def reg1():
     msg=""
     if request.method == 'POST':
@@ -83,18 +83,18 @@ def reg1():
 
 #Routing to the user dashboard
 
-@application.route('/12fox')
-def base():
+@app.route('/home')
+def home():
    return render_template("index.html")
 
 
 #Routing to the contact us
 
-@application.route('/contact')
+@app.route('/contact')
 def contact():
    return render_template("contact.html")
 
-@application.route('/contact1', methods=['GET', 'POST'])
+@app.route('/contact1', methods=['GET', 'POST'])
 def contact1():
     msg=""
     if request.method == 'POST':
@@ -106,11 +106,11 @@ def contact1():
         
         query =("INSERT INTO contact (USERNAME ,EMAIL ,SUBJECT ,MESSAGE) VALUES (%s, %s, %s, %s)")  
         cursor.execute(query, (USERNAME,EMAIL,SUBJECT,MESSAGE))
-        contact =conn.commit()
+        contact= conn.commit()
     
         return render_template('contact.html', msg="Thanks for filling in 12Fox!!")
 
 
 
 if __name__ == "__main__":
-   application.run(host='0.0.0.0',debug=True)
+   app.run(host='0.0.0.0',debug=True)
