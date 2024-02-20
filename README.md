@@ -1,5 +1,5 @@
 ## Demo Link:
-It only showcases the demo of this project, which is deployed on the Netlify platform because the AWS Ec2 instances run properly until the AWS RDS shows a connection issue after 8 hours on port 34.229.0.225.
+It only showcases the demo of this project, which is deployed on the Netlify platform because the AWS Ec2 instances run properly until the AWS RDS shows a connection issue due to timeout after 8 hours on port 34.229.0.225.
 
 https://12fox.netlify.app/
 ## Demo video:
